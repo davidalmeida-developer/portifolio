@@ -1,0 +1,232 @@
+body {
+  background-color: white;
+  margin: 0;
+}
+
+/** border-top-left-radius: 15px
+ *  border-top-right-radius: 15px **/
+main {
+  background-color: #d39393;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-columns: 4, 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "main main main main" "about about about about" "quote quote quote quote" "job-exp_experience job-exp_experience job-exp_experience job-exp__skills" "education__college education__college education__others education__others";
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+header nav {
+  background-color: #84b840;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-size: larger;
+  text-shadow: 1px 1px 1px black;
+}
+
+#main-title {
+  grid-area: main;
+  text-align: center;
+  font-size: 2.5em;
+  color: black;
+  text-shadow: 1px 1px 1px white;
+}
+
+#about {
+  display: flex;
+  grid-area: about;
+}
+#about #about_photo {
+  max-width: 280px;
+  height: auto;
+  border-radius: 15px;
+  margin: 0 0 0 10px;
+}
+#about #about__text-cnt {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  margin: 0 10px;
+}
+
+#quote {
+  background-color: #557031;
+  text-align: center;
+  color: white;
+  margin: 0 10px;
+  padding: 20px 0;
+  grid-area: quote;
+  border-radius: 15px;
+}
+#quote #quote_cite {
+  font-size: 1.5em;
+}
+
+#job-exp {
+  background-color: white;
+  grid-area: job-exp_experience;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 0 0 0 10px;
+}
+#job-exp #job-exp_experience {
+  display: grid;
+  grid-template-columns: 6, 1fr;
+  grid-template-rows: auto;
+  column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-areas: "job1 job1 job2 job2 job3 job3" "job4 job4 job4 job5 job5 job5";
+}
+#job-exp #job-exp_experience .job-exp__jobs {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #bdda97;
+}
+#job-exp #job-exp_experience .job-exp__jobs .job-exp__company-logo {
+  max-height: 100px;
+  width: auto;
+  border-radius: 15px;
+}
+#job-exp #job-exp_experience #job1 {
+  grid-area: job1;
+  text-align: center;
+}
+#job-exp #job-exp_experience #job1 p {
+  text-align: justify;
+  padding: 10px;
+}
+#job-exp #job-exp_experience #job2 {
+  grid-area: job2;
+  text-align: center;
+}
+#job-exp #job-exp_experience #job2 p {
+  text-align: justify;
+  padding: 10px;
+}
+#job-exp #job-exp_experience #job3 {
+  grid-area: job3;
+  text-align: center;
+}
+#job-exp #job-exp_experience #job3 p {
+  text-align: justify;
+  padding: 10px;
+}
+#job-exp #job-exp_experience #job4 {
+  grid-area: job4;
+  text-align: center;
+}
+#job-exp #job-exp_experience #job4 p {
+  padding: 10px;
+  text-align: justify;
+}
+#job-exp #job-exp_experience #job5 {
+  grid-area: job5;
+  text-align: center;
+}
+#job-exp #job-exp_experience #job5 p {
+  text-align: justify;
+  padding: 10px;
+}
+
+#skills {
+  grid-area: job-exp__skills;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 0 10px 0 0;
+}
+
+#education {
+  grid-area: education__college;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 0 0 10px 10px;
+}
+
+#extracurricular {
+  grid-area: education__others;
+  background-color: #bdda97;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 0 10px 10px 0;
+}
+
+footer {
+  background-color: #7d7e6d;
+  color: lightgrey;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 10px 50px;
+  align-items: center;
+}
+footer #footer__social-medias .footer__social-medias_icons {
+  max-width: 40px;
+  height: auto;
+  padding: 5px;
+}
+footer #footer__email-phone p {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  main {
+    grid-template-columns: 100%;
+    grid-template-areas: "main" "about" "quote" "job-exp_experience" "job-exp__skills" "education__college" "education__others";
+  }
+
+  #about {
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+  #about #about_photo {
+    max-width: 380px;
+    margin-bottom: 10px;
+  }
+  #about #about_photo #about__text-cnt {
+    padding: 20px;
+  }
+
+  #job-exp {
+    margin-right: 10px;
+  }
+  #job-exp #job-exp_experience {
+    grid-template-columns: 100%;
+    grid-template-areas: "job1" "job2" "job3" "job4" "job5";
+  }
+  #job-exp #job-exp_experience #job1, #job-exp #job-exp_experience #job2, #job-exp #job-exp_experience #job3, #job-exp #job-exp_experience #job4, #job-exp #job-exp_experience #job5 {
+    display: flex;
+    align-items: center;
+  }
+
+  #skills {
+    margin-left: 10px;
+  }
+
+  #education {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+
+  #extracurricular {
+    margin-left: 10px;
+  }
+
+  footer {
+    flex-flow: column wrap;
+    text-align: justify;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
